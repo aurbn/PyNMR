@@ -33,7 +33,7 @@ import Tkinter as Tk
 import Pmw
 
 from Panel import Panel
-
+from altSelection import ITunes
 
 class ConstraintSelectionPanel(Panel):
     def __init__(self, master):
@@ -56,6 +56,9 @@ class ConstraintSelectionPanel(Panel):
         self.structureManagement = StructureSelectionPanel(self)
         self.structureManagement.grid(row=1, column=0, columnspan=2)
         self.panelsList.append(self.structureManagement)
+        
+        self.altSelection = ITunes(self)
+        self.altSelection.grid(row=2)
 
     def getInfo(self):
         infos = {}
